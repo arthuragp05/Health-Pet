@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'agendas_screen.dart';
 
 class ConsultasScreen extends StatelessWidget {
   const ConsultasScreen({super.key});
@@ -18,10 +19,7 @@ class ConsultasScreen extends StatelessWidget {
             },
           ),
           centerTitle: true,
-          title: Image.asset(
-            'assets/logo.png',
-            height: 90,
-          ),
+          title: Image.asset('assets/logo.png', height: 90),
         ),
       ),
       body: Container(
@@ -34,6 +32,37 @@ class ConsultasScreen extends StatelessWidget {
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: 36,
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 194, 195, 194),
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AgendasScreen(),
+                        ),
+                      );
+                    },
+                    icon: const Icon(
+                      Icons.calendar_today,
+                      size: 16,
+                      color: Colors.black87,
+                    ),
+                    label: const Text(
+                      'Ver Agenda',
+                      style: TextStyle(color: Colors.black87),
+                    ),
+                  ),
+                ),
+              ],
+            ),
 
             // Próximas Consultas
             const Text(
@@ -43,14 +72,14 @@ class ConsultasScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Card(
               elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: ListTile(
                 title: const Text('Clínica Pet Vida'),
                 subtitle: const Text('14/04/2025 - 10:00h'),
                 trailing: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                  ),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                   onPressed: () {
                     // ação de cancelar
                   },
@@ -80,15 +109,23 @@ class ConsultasScreen extends StatelessWidget {
             // Clínica disponível
             Card(
               elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12,
+                  horizontal: 16,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       'Vet Saúde',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     const Text('Especialidades: Dermatologia, Ortopedia'),
