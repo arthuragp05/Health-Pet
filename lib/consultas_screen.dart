@@ -19,7 +19,10 @@ class ConsultasScreen extends StatelessWidget {
             },
           ),
           centerTitle: true,
-          title: Image.asset('assets/logo.png', height: 90),
+          title: Image.asset(
+            'assets/logo.png',
+            height: 90,
+          ),
         ),
       ),
       body: Container(
@@ -72,14 +75,14 @@ class ConsultasScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Card(
               elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               child: ListTile(
                 title: const Text('Clínica Pet Vida'),
                 subtitle: const Text('14/04/2025 - 10:00h'),
                 trailing: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
                   onPressed: () {
                     // ação de cancelar
                   },
@@ -109,23 +112,15 @@ class ConsultasScreen extends StatelessWidget {
             // Clínica disponível
             Card(
               elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 12,
-                  horizontal: 16,
-                ),
+                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       'Vet Saúde',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 4),
                     const Text('Especialidades: Dermatologia, Ortopedia'),
